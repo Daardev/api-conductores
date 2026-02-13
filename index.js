@@ -5,7 +5,7 @@ const path = require('path');
 const { Pool } = require('pg');
 
 const app = express();
-const publicDir = path.join(__dirname, 'public');
+const docsDir = path.join(__dirname, 'docs');
 
 const PORT = Number(process.env.PORT) || 3000;
 const corsOrigins = (process.env.CORS_ORIGINS || 'http://localhost:5500,http://127.0.0.1:5500')
@@ -22,7 +22,7 @@ const pool = new Pool({
   password: process.env.PGPASSWORD
 });
 
-app.use(express.static(publicDir));
+app.use(express.static(docsDir));
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -42,7 +42,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  return res.sendFile(path.join(publicDir, 'index.html'));
+  return res.sendFile(path.join(docsDir, 'index.html'));
 });
 
 app.get('/conductores', async (req, res) => {

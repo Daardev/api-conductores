@@ -1,4 +1,4 @@
-# API con Express + PostgreSQL: Conductores y Automoviles
+﻿# API con Express + PostgreSQL: Conductores y Automoviles
 
 Documentacion minima del proyecto del ejercicio.
 
@@ -54,6 +54,6 @@ Codigos usados: `200`, `400`, `404`, `500`.
 
 - `index.js`: servidor Express + consultas SQL
 - `actividad2.sql`: esquema y datos
-- `public/index.html`: interfaz cliente
-- `public/styles.css`: estilos
-- `public/app.js`: consumo de endpoints
+- `docs/index.html`: interfaz cliente
+- `docs/styles.css`: estilos
+- `docs/app.js`: consumo de endpoints

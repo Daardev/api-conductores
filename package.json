@@ -1,0 +1,17 @@
+﻿{
+  "name": "api-con-express",
+  "version": "1.0.0",
+  "description": "API con Express + PostgreSQL para conductores y automoviles",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}

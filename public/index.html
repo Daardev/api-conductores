@@ -1,0 +1,82 @@
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Conductores y Automoviles</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="hero-tag">API + PostgreSQL</p>
+        <h1>Conductores y Automoviles</h1>
+        <p class="hero-subtitle">Consulta cada endpoint y revisa la respuesta en tablas ordenadas.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Consultas</h2>
+        <div class="query-grid">
+          <article class="query-card">
+            <h3>Listados generales</h3>
+            <p class="hint">Obtiene todos los registros.</p>
+            <div class="button-row">
+              <button id="btnConductores" type="button">GET /conductores</button>
+              <button id="btnAutomoviles" type="button">GET /automóviles</button>
+            </div>
+          </article>
+
+          <article class="query-card">
+            <h3>Conductores sin auto por edad</h3>
+            <label for="edad">Edad limite</label>
+            <div class="field-row">
+              <input id="edad" type="number" min="0" placeholder="Ej: 30" />
+              <button id="btnSinAutoEdad" type="button">GET /conductoressinauto?edad=</button>
+            </div>
+            <p class="hint">Filtra conductores menores al valor indicado que no tienen automovil.</p>
+          </article>
+
+          <article class="query-card">
+            <h3>Solitos</h3>
+            <p class="hint">Conductores sin automovil y automoviles sin conductor.</p>
+            <div class="button-row">
+              <button id="btnSolitos" type="button">GET /solitos</button>
+            </div>
+          </article>
+
+          <article class="query-card">
+            <h3>Auto por patente</h3>
+            <label for="patente">Patente exacta</label>
+            <div class="field-row">
+              <input id="patente" type="text" maxlength="10" placeholder="Ej: BXVZ67" />
+              <button id="btnAutoPatente" type="button">GET /auto?patente=</button>
+            </div>
+          </article>
+
+          <article class="query-card">
+            <h3>Autos por inicio de patente</h3>
+            <label for="inicioPatente">Inicio de patente</label>
+            <div class="field-row">
+              <input id="inicioPatente" type="text" maxlength="1" placeholder="Ej: R" />
+              <button id="btnAutoInicio" type="button">GET /auto?iniciopatente=</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel result-panel" id="salida">
+        <div class="result-header">
+          <div>
+            <p class="result-label">Resultado</p>
+            <h2 id="consultaActual">Sin consulta ejecutada</h2>
+          </div>
+          <p class="status-chip status-idle" id="estado">Listo</p>
+        </div>
+        <div id="contenido" class="result-body">
+          <p class="empty-message">Selecciona una consulta para ver datos.</p>
+        </div>
+      </section>
+    </main>
+    <script src="./app.js"></script>
+  </body>
+</html>
